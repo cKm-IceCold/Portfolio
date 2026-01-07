@@ -44,7 +44,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-            My <span className="text-gradient">Tech Stack</span>
+            My Tech Stack
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
             Technologies I use to bring ideas to life. I focus on modern,
@@ -62,10 +62,8 @@ const Skills = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900"
             >
-              <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white font-bold">
-                {category === "Frontend" ? <>Front<span className="text-primary">end</span></> :
-                  category === "Backend" ? <>Back<span className="text-primary">end</span></> :
-                    <>Too<span className="text-primary">ls</span></>}
+              <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+                {category}
               </h3>
 
               <div className="flex flex-wrap gap-3">

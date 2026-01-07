@@ -41,6 +41,6 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-400 dark:to-indigo-400;
+    @apply text-slate-950 dark:text-white;
   }
 }

@@ -16,7 +16,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="px-4 py-1.5 pt-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 inline-block">
+          <span className="px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium mb-6 inline-block">
             Available for new opportunities
           </span>
         </motion.div>
@@ -24,11 +24,12 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-[1.1] text-slate-950 dark:text-white"
         >
-          Crafting Digital <br />
-          <span className="text-gradient">Experiences</span> with Purpose
+          Building Digital
+          <br />
+          <span>Experiences</span> with Purpose
         </motion.h1>
 
         <motion.p

@@ -16,7 +16,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">
-            About <span className="text-primary">Me</span>
+            About Me
           </h2>
 
           <div className="space-y-6 text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
@@ -33,10 +33,10 @@ const About = () => {
         {/* Highlights */}
         <div className="grid grid-cols-2 gap-4">
           {[
-            { display: <>Front<span className="text-primary">end</span></>, label: "Frontend", icon: "🎨" },
-            { display: <>Back<span className="text-primary">end</span></>, label: "Backend", icon: "⚙️" },
-            { display: <>Desi<span className="text-primary">gn</span></>, label: "Design", icon: "✨" },
-            { display: <>Logi<span className="text-primary">c</span></>, label: "Logic", icon: "🧠" },
+            { label: "Frontend", icon: "🎨" },
+            { label: "Backend", icon: "⚙️" },
+            { label: "Design", icon: "✨" },
+            { label: "Logic", icon: "🧠" },
           ].map((item, index) => (
             <motion.div
               key={item.label}
@@ -50,7 +50,7 @@ const About = () => {
                 {item.icon}
               </div>
               <div className="font-bold text-slate-900 dark:text-white">
-                {item.display}
+                {item.label}
               </div>
             </motion.div>
           ))}

@@ -32,7 +32,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-            Get in <span className="text-gradient">Touch</span>
+            Get in Touch
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
             Have a project in mind or just want to say hi? Feel free to reach out!
