@@ -1,21 +1,20 @@
 import { useRef } from "react";
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const formRef = useRef();
 
-  const sendEmail = (e) => {
+  const handleEmailSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(formRef.current);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    );
+    const mailtoUrl = `mailto:chukspaul777@gmail.com?subject=Portfolio Message from ${name}&body=From: ${name} (${email})%0D%0A%0D%0A${message}`;
 
+    window.location.href = mailtoUrl;
     e.target.reset();
   };
 
@@ -57,7 +56,7 @@ const Contact = () => {
 
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/2349034864471?text=Hi%20I%20saw%20your%20portfolio"
+                  href="https://wa.me/2349154100656?text=Hi%20I%20saw%20your%20portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl glass hover:border-primary/50 transition-colors group"
@@ -67,7 +66,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">WhatsApp</div>
-                    <div className="font-semibold text-slate-800 dark:text-white">+234 903 486 4471</div>
+                    <div className="font-semibold text-slate-800 dark:text-white">+234 915 4100 656</div>
                   </div>
                 </a>
               </div>
@@ -83,7 +82,7 @@ const Contact = () => {
           >
             <form
               ref={formRef}
-              onSubmit={sendEmail}
+              onSubmit={handleEmailSubmit}
               className="grid gap-4"
             >
               <div className="grid sm:grid-cols-2 gap-4">
