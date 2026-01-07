@@ -9,7 +9,7 @@
 @layer base {
   body {
     @apply font-sans antialiased transition-colors duration-300;
-    @apply bg-white text-slate-950;
+    @apply bg-slate-50 text-slate-900;
   }
 
   .dark body {
@@ -27,8 +27,7 @@
 
 @layer utilities {
   .glass {
-    /* Highly opaque white background for light mode to ensure text pop */
-    @apply backdrop-blur-xl bg-white/95 border border-slate-200 shadow-md;
+    @apply backdrop-blur-xl bg-white/60 border border-slate-200/50 shadow-sm;
   }
 
   .dark .glass {
@@ -36,7 +35,6 @@
   }
 
   .text-gradient {
-    /* High saturation gradients for light mode visibility */
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 font-extrabold;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-400 dark:to-indigo-400;
   }
 }

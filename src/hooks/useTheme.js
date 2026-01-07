@@ -6,7 +6,7 @@ export const useTheme = () => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme");
       if (saved) return saved;
-      // Default to dark as requested
+      // Strictly default to dark as requested
       return "dark";
     }
     return "dark";

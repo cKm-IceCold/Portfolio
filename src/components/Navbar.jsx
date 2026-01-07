@@ -9,16 +9,16 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm font-semibold text-slate-900 dark:text-slate-400 hover:text-primary transition-colors">
+          <a href="#about" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
             About
           </a>
-          <a href="#skills" className="text-sm font-semibold text-slate-900 dark:text-slate-400 hover:text-primary transition-colors">
+          <a href="#skills" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
             Skills
           </a>
-          <a href="#projects" className="text-sm font-semibold text-slate-900 dark:text-slate-400 hover:text-primary transition-colors">
+          <a href="#projects" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
             Projects
           </a>
-          <a href="#contact" className="text-sm font-semibold text-slate-900 dark:text-slate-400 hover:text-primary transition-colors">
+          <a href="#contact" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
             Contact
           </a>
         </div>

@@ -35,9 +35,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-6 text-slate-950 dark:text-slate-900 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          className="mt-6 text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
-          Hi, I'm <span className="text-slate-950 dark:text-white font-bold">Chukwuma</span>.
+          Hi, I'm <span className="text-slate-500 dark:text-white font-semibold">Chukwuma</span>.
           A FullStack Developer with a touch of Marketing, specializing in building high-performance,
           accessible, visually stunning, and revenue-generating web applications.
         </motion.p>

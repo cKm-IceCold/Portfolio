@@ -13,7 +13,7 @@ const ProjectCard = ({ project }) => {
       className="group p-1 rounded-3xl glass hover:border-primary/50 transition-all duration-300 overflow-hidden"
     >
       <div className="p-7">
-        <h3 className="text-2xl font-bold mb-3 text-slate-950 dark:text-white group-hover:text-primary transition-colors">
+        <h3 className="text-2xl font-bold mb-3 text-slate-800 dark:text-white group-hover:text-primary transition-colors">
           {project.title}
         </h3>
 
