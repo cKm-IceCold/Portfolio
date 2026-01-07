@@ -2,7 +2,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 glass">
+    <nav className="fixed top-0 w-full h-18 z-50 glass">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#home" className="text-xl font-bold tracking-tight text-gradient">
           Chukwuma.dev

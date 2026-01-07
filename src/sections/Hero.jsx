@@ -16,7 +16,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 inline-block">
+          <span className="px-4 py-1.5 pt-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 inline-block">
             Available for new opportunities
           </span>
         </motion.div>
