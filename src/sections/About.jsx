@@ -15,7 +15,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-slate-950 dark:text-white">
             About <span className="text-primary">Me</span>
           </h2>
 
@@ -49,7 +49,7 @@ const About = () => {
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
-              <div className="font-semibold text-slate-800 dark:text-white">
+              <div className="font-bold text-slate-950 dark:text-white">
                 {item.label}
               </div>
             </motion.div>

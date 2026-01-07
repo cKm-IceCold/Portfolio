@@ -43,7 +43,7 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-slate-950 dark:text-white">
             My <span className="text-gradient">Tech Stack</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
@@ -62,7 +62,7 @@ const Skills = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="p-8 rounded-3xl glass hover:border-primary/50 transition-all duration-300 group hover:-translate-y-2"
             >
-              <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white group-hover:text-primary transition-colors">
+              <h3 className="text-2xl font-bold mb-6 text-slate-950 dark:text-white group-hover:text-primary transition-colors">
                 {category}
               </h3>
 
