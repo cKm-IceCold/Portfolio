@@ -3,18 +3,35 @@ import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ project }) => {
+  const renderTitle = (title) => {
+    const parts = title.split(" ");
+    if (parts.length > 1) {
+      return (
+        <>
+          {parts[0]} <span className="text-primary">{parts.slice(1).join(" ")}</span>
+        </>
+      );
+    }
+    const mid = Math.floor(title.length / 2);
+    return (
+      <>
+        {title.substring(0, mid)}
+        <span className="text-primary">{title.substring(mid)}</span>
+      </>
+    );
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -5 }}
-      className="group p-1 rounded-3xl glass hover:border-primary/50 transition-all duration-300 overflow-hidden"
+      className="p-1 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 overflow-hidden"
     >
       <div className="p-7">
-        <h3 className="text-2xl font-bold mb-3 text-slate-800 dark:text-white group-hover:text-primary transition-colors">
-          {project.title}
+        <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">
+          {renderTitle(project.title)}
         </h3>
 
         <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
@@ -45,7 +62,7 @@ const ProjectCard = ({ project }) => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-2"
+            className="text-sm font-bold text-slate-500 dark:text-slate-400 flex items-center gap-2"
           >
             <FaGithub className="text-lg" /> Source Code
           </a>

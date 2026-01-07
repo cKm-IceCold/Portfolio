@@ -60,10 +60,12 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-8 rounded-3xl glass hover:border-primary/50 transition-all duration-300 group hover:-translate-y-2"
+              className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900"
             >
-              <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
-                {category}
+              <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white font-bold">
+                {category === "Frontend" ? <>Front<span className="text-primary">end</span></> :
+                  category === "Backend" ? <>Back<span className="text-primary">end</span></> :
+                    <>Too<span className="text-primary">ls</span></>}
               </h3>
 
               <div className="flex flex-wrap gap-3">

@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3b82f6;
+  --color-primary: #0f172a;
+  /* Blackish per user request */
   --color-secondary: #8b5cf6;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans antialiased transition-colors duration-300;
+    @apply font-sans antialiased;
     @apply bg-slate-50 text-slate-900;
+  }
+
+  .dark {
+    --color-primary: #3b82f6;
+    /* Blue for dark mode */
   }
 
   .dark body {

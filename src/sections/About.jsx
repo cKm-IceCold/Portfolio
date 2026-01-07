@@ -33,10 +33,10 @@ const About = () => {
         {/* Highlights */}
         <div className="grid grid-cols-2 gap-4">
           {[
-            { label: "Frontend", icon: "🎨" },
-            { label: "Backend", icon: "⚙️" },
-            { label: "Design", icon: "✨" },
-            { label: "Logic", icon: "🧠" },
+            { display: <>Front<span className="text-primary">end</span></>, label: "Frontend", icon: "🎨" },
+            { display: <>Back<span className="text-primary">end</span></>, label: "Backend", icon: "⚙️" },
+            { display: <>Desi<span className="text-primary">gn</span></>, label: "Design", icon: "✨" },
+            { display: <>Logi<span className="text-primary">c</span></>, label: "Logic", icon: "🧠" },
           ].map((item, index) => (
             <motion.div
               key={item.label}
@@ -44,13 +44,13 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="p-6 rounded-2xl glass hover:border-primary/50 transition-colors group"
+              className="p-6 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900"
             >
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <div className="font-bold text-slate-900 dark:text-white">
-                {item.label}
+                {item.display}
               </div>
             </motion.div>
           ))}
