@@ -19,7 +19,7 @@ const About = () => {
             About Me
           </h2>
 
-          <div className="space-y-6 text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-600 dark:text-slate-600 text-lg leading-relaxed">
             <p>
               I create websites and applications that turn visitors into customers. With a focus on clean interfaces, fast performance, and SEO best practices, I help ideas reach the right audience.
             </p>
