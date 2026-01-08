@@ -16,7 +16,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="px-4 py-1.5 rounded-full border border-slate-800 dark:border-white/10 bg-slate-600 dark:bg-slate-400 text-slate-700 dark:text-slate-400 text-sm font-medium mb-6 inline-block">
+          <span className="px-4 py-1.5 rounded-full border border-black dark:border-blue-500/10 bg-slate-600 dark:bg-slate-400 text-white-700 dark:text-white-400 text-sm font-medium mb-6 inline-block">
             Available for new opportunities
           </span>
         </motion.div>
@@ -36,7 +36,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-6 text-slate-800 dark:text-white-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          className="mt-6 text-white-800 dark:text-white-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
           Hi, I'm <span className="text-slate-900 dark:text-blue-500 font-semibold">Chukwuma</span>.
           A FullStack Developer with a touch of Marketing, specializing in building high-performance,

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full h-18 z-50 glass">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold tracking-tight text-blue-800 dark:text-blue-200">
+        <a href="#home" className="text-xl font-bold tracking-tight text-blue-800 dark:text-blue-100">
           Chukwuma.dev
         </a>
 
