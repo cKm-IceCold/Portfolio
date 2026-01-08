@@ -25,7 +25,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-[1.1] text-slate-950 dark:text-white"
+          className="text-4xl md:text-6xl font-white mb-8 tracking-tighter leading-[1.1] text-white-850 dark:text-white"
         >
           Building Digital
           <br />
@@ -38,7 +38,7 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-6 text-white-800 dark:text-white-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
-          Hi, I'm <span className="text-slate-900 dark:text-blue-500 font-semibold">Chukwuma</span>.
+          Hi, I'm <span className="text-blue-900 dark:text-blue-500 font-semibold">Chukwuma</span>.
           A FullStack Developer with a touch of Marketing, specializing in building high-performance,
           accessible, visually stunning, and revenue-generating web applications.
         </motion.p>
