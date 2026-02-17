@@ -4,28 +4,34 @@ import {
 } from "react-icons/fa";
 import {
   SiJavascript, SiTailwindcss, SiHtml5, SiCss3,
-  SiFirebase, SiDjango, SiVite, SiFramer
+  SiFirebase, SiDjango, SiVite, SiFramer, SiExpress, SiOpenai
 } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
+import { Brain, Sparkles } from "lucide-react";
 
 const skills = {
   Frontend: [
     { name: "React", icon: <FaReact className="text-blue-400" /> },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
-    { name: "HTML & CSS", icon: <div className="flex gap-1"><SiHtml5 className="text-orange-500" /><SiCss3 className="text-blue-500" /></div> },
+    { name: "JS", icon: <SiJavascript className="text-yellow-400" /> },
+    { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+    { name: "HTML/CSS", icon: <div className="flex gap-1"><SiHtml5 className="text-orange-500" /><SiCss3 className="text-blue-500" /></div> },
   ],
   Backend: [
+    { name: "Express", icon: <SiExpress className="text-slate-800" /> },
     { name: "Firebase", icon: <SiFirebase className="text-orange-400" /> },
     { name: "Django", icon: <SiDjango className="text-green-800" /> },
-    { name: "REST APIs", icon: <AiOutlineApi className="text-slate-400" /> },
-    { name: "Firestore", icon: <SiFirebase className="text-orange-500" /> },
+    { name: "APIs", icon: <AiOutlineApi className="text-slate-800" /> },
+  ],
+  AI: [
+    { name: "Gemini", icon: <Sparkles className="text-blue-500" /> },
+    { name: "OpenAI", icon: <SiOpenai className="text-emerald-500" /> },
+    { name: "Agents", icon: <Brain className="text-purple-500" /> },
   ],
   Tools: [
-    { name: "Git & GitHub", icon: <div className="flex gap-1"><FaGitAlt className="text-orange-600" /><FaGithub /></div> },
+    { name: "Git", icon: <div className="flex gap-1"><FaGitAlt className="text-orange-600" /><FaGithub /></div> },
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
     { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
-    { name: "Framer Motion", icon: <SiFramer className="text-purple-400" /> },
+    { name: "Framer", icon: <SiFramer className="text-purple-400" /> },
   ],
 };
 
@@ -41,18 +47,18 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-            My Tech Stack
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-black">
+            Technical <span className="text-gradient">Arsenal</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-800 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
             Technologies I use to bring ideas to life. I focus on modern,
             well-maintained libraries and frameworks.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {Object.entries(skills).map(([category, items], index) => (
             <motion.div
               key={category}
@@ -60,20 +66,22 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-3xl glass group hover:border-blue-500/30 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-8 text-black flex items-center gap-3">
+                <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full" />
                 {category}
               </h3>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {items.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium border border-transparent hover:border-primary/30 transition-colors"
+                    className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group/skill"
                   >
-                    <span className="text-lg">{skill.icon}</span>
-                    <span>{skill.name}</span>
+                    <span className="text-3xl mb-3 transition-transform duration-300 group-hover/skill:scale-110">{skill.icon}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800">{skill.name}</span>
                   </div>
                 ))}
               </div>

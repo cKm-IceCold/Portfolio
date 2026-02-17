@@ -1,28 +1,38 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { Folder } from "lucide-react";
+import GlowingEffect from "./ui/glowing-effect";
 
 const ProjectCard = ({ project }) => {
-  // Simplified: No longer splits text or applies different colors
-  const renderTitle = (title) => {
-    return <>{title}</>;
-  };
-
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileHover={{ y: -10 }}
       transition={{ duration: 0.5 }}
-      // Simplified to strictly dark mode styles
-      className="p-1 rounded-3xl border border-white/10 bg-slate-900 overflow-hidden"
+      className="relative group p-6 rounded-3xl glass h-full flex flex-col"
     >
-      <div className="p-7">
-        <h3 className="text-2xl font-bold mb-3 text-white">
-          {renderTitle(project.title)}
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={3}
+      />
+
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="mb-4 overflow-hidden rounded-2xl h-48 bg-slate-100 flex items-center justify-center">
+          <Folder className="w-12 h-12 text-slate-600 opacity-70" />
+        </div>
+
+        <h3 className="text-2xl font-bold mb-3 text-black group-hover:text-blue-600 transition-colors">
+          {project.title}
         </h3>
 
-        <p className="text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+        <p className="text-slate-700 mb-6 flex-grow leading-relaxed">
           {project.description}
         </p>
 
@@ -30,30 +40,29 @@ const ProjectCard = ({ project }) => {
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300"
+              className="text-[10px] font-bold px-2 py-1 rounded bg-blue-50 text-blue-600 border border-blue-100 uppercase tracking-wider"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 mt-auto">
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            // Changed text-primary to text-white or slate-300 for uniformity
-            className="text-sm font-bold text-slate-300 hover:text-white hover:underline underline-offset-4 flex items-center gap-2 transition-colors"
+            className="text-sm font-bold bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
           >
-            Live Demo <FiExternalLink className="text-lg" />
+            View Live <FiExternalLink />
           </a>
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-bold text-slate-400 hover:text-white flex items-center gap-2 transition-colors"
+            className="text-slate-800 hover:text-black transition-colors"
           >
-            <FaGithub className="text-lg" /> Source Code
+            <FaGithub className="text-2xl" />
           </a>
         </div>
       </div>

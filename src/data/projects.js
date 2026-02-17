@@ -4,8 +4,8 @@ export const projects = [
     description:
       "A web app that helps users plan trips, save destinations, and organize travel details in one place.",
     tech: ["React", "Tailwind", "Firebase"],
-    live: "https://www.Travelplans.vercel.app",
-    github: "https://github.com/cKm-IceCold/Travel-Planner",
+    live: "#",
+    github: "#",
   },
   {
     title: "WorkFeed",
@@ -16,11 +16,11 @@ export const projects = [
     github: "#",
   },
   {
-    title: "Nexus Verify",
+    title: "Guard-AI",
     description:
-      "A real estate document verification and price validation platform with verified listing.",
-    tech: ["React", "Django", "Tailwind"],
-    live: "https://nexusverify.vercel.app/",
-    github: "https://github.com/cKm-IceCold/CapstoneProject-NexusVerify",
+      "An AI-driven security system designed to monitor and protect digital assets from potential threats.",
+    tech: ["React", "Express", "OpenAI"],
+    live: "#",
+    github: "#",
   },
 ];

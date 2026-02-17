@@ -1,46 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
-  /* Blackish per user request */
-  --color-secondary: #8b5cf6;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-primary: #2563eb;
+    --color-secondary: #3b82f6;
+    --color-accent: #60a5fa;
+
+    --color-background-light: #ffffff;
+    --color-background-dark: #000000;
+
+    --breakpoint-xs: 480px;
 }
 
 @layer base {
-  body {
-    @apply font-sans antialiased;
-    @apply bg-slate-50 text-slate-900;
-  }
+    :root {
+        --primary: #2563eb;
+        --background: #ffffff;
+        --foreground: #000000;
+    }
 
-  .dark {
-    --color-primary: #3b82f6;
-    /* Blue for dark mode */
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 
-  .dark body {
-    @apply bg-slate-950 text-slate-50;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  * {
-    @apply border-slate-200 dark:border-white/10;
-  }
+    body {
+        /* Reveal Background.jsx */
+        background-color: transparent;
+        color: var(--foreground);
+        @apply font-sans antialiased selection:bg-blue-500/20;
+    }
 }
 
 @layer utilities {
-  .glass {
-    @apply backdrop-blur-xl bg-white/60 border border-slate-200/50 shadow-sm;
-  }
+    .glass {
+        @apply bg-white/60 backdrop-blur-xl border border-black/5 shadow-2xl shadow-blue-500/10;
+    }
 
-  .dark .glass {
-    @apply bg-slate-900/60 border-white/10 shadow-none;
-  }
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-black via-blue-700 to-black;
+    }
 
-  .text-gradient {
-    @apply text-slate-950 dark:text-white;
-  }
+    .mesh-gradient {
+        background-image:
+            radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.1) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+    }
 }
