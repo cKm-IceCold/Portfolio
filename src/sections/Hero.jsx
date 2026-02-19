@@ -21,17 +21,51 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center px-6 pt-20 overflow-hidden"
+      className="relative min-h-[90vh] flex items-center justify-center px-6 pt-32 lg:pt-20 overflow-hidden"
     >
       <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-left">
+          {/* Professional Profile Card (Mobile Only) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex lg:hidden flex-col gap-4 mb-10 p-5 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-blue-500/5"
+          >
+            <div className="flex items-center gap-5">
+              <div className="w-20 h-20 rounded-2xl overflow-hidden border border-slate-100 shadow-inner bg-slate-50">
+                <img src={profileImg} alt="Chukwuma Paul" className="w-full h-full object-cover grayscale-[10%]" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-black leading-tight">Chukwuma Paul</h2>
+                <p className="text-sm font-bold text-blue-600">Fullstack Developer</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="w-2 h-2 rounded-full bg-green-500" />
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Available to hire</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-slate-100 grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Experience</p>
+                <p className="text-sm font-bold text-black">2+ Years</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Focus</p>
+                <p className="text-sm font-bold text-black">AI & Web Apps</p>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
+            className="hidden lg:block"
           >
-            <span className="px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6 inline-block">
-              Available for new opportunities
+            <span className="px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-600 border border-blue-500/20 mb-6 inline-block">
+              Open to new opportunities
             </span>
           </motion.div>
 
@@ -109,29 +143,25 @@ const Hero = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="flex justify-center items-center order-first lg:order-last mb-12 lg:mb-0"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hidden lg:flex justify-center items-center"
         >
-          <div className="relative w-80 h-80">
-            {/* Animated decorative elements */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-[3rem] border-2 border-dashed border-blue-500/30"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-4 rounded-[2.5rem] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-20 blur-2xl"
-            />
-            <div className="absolute inset-4 rounded-[2.5rem] bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shadow-2xl">
-              <img
-                src={profileImg}
-                alt="Chukwuma"
-                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-              />
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative w-80 h-96 rounded-[3rem] overflow-hidden border border-slate-200 bg-white shadow-2xl p-3">
+              <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-slate-50">
+                <img
+                  src={profileImg}
+                  alt="Chukwuma Paul"
+                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
+                />
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 p-4 glass rounded-2xl border-white/20 shadow-xl translate-y-20 group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-sm font-black text-black">Chukwuma Paul</p>
+                <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Fullstack Engineer</p>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import {
   FaReact, FaGitAlt, FaGithub, FaFigma
 } from "react-icons/fa";
 import {
   SiJavascript, SiTailwindcss, SiHtml5, SiCss3,
   SiFirebase, SiDjango, SiVite, SiFramer, SiExpress, SiOpenai,
-  SiMysql, SiPostgresql, SiMongodb
+  SiMysql, SiPostgresql, SiMongodb, SiPython
 } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
-import { Brain, Sparkles } from "lucide-react";
+import { Brain, Sparkles, Atom, Laptop, ChevronLeft, ChevronRight } from "lucide-react";
 
 const skills = {
   Frontend: [
@@ -42,6 +43,18 @@ const skills = {
 };
 
 const Skills = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = 350;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="skills"
@@ -64,35 +77,57 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {Object.entries(skills).map(([category, items], index) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="p-8 rounded-3xl glass group hover:border-blue-500/30 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-bold mb-8 text-black flex items-center gap-3">
-                <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full" />
-                {category}
-              </h3>
+        <div className="relative group/container">
+          {/* Scroll Buttons */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-3 rounded-full bg-white shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:scale-110 active:scale-95 transition-all flex"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-              <div className="grid grid-cols-2 gap-3">
-                {items.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group/skill"
-                  >
-                    <span className="text-3xl mb-3 transition-transform duration-300 group-hover/skill:scale-110">{skill.icon}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800">{skill.name}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-3 rounded-full bg-white shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:scale-110 active:scale-95 transition-all flex"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto pb-8 gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide px-2"
+          >
+            {Object.entries(skills).map(([category, items], index) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -5 }}
+                className="min-w-[280px] md:min-w-[320px] p-8 rounded-3xl glass group hover:border-blue-500/30 transition-all duration-300 snap-center"
+              >
+                <h3 className="text-2xl font-bold mb-8 text-black flex items-center gap-3">
+                  <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-transparent rounded-full" />
+                  {category}
+                </h3>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {items.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group/skill"
+                    >
+                      <span className="text-3xl mb-3 transition-transform duration-300 group-hover/skill:scale-110">{skill.icon}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
