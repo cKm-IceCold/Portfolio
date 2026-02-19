@@ -60,7 +60,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full mt-2 p-4 rounded-2xl glass md:hidden flex flex-col gap-4"
+            className="absolute top-full left-0 w-full mt-2 p-4 rounded-2xl bg-white/95 backdrop-blur-xl shadow-2xl border border-slate-200 md:hidden flex flex-col gap-4"
           >
             {menuItems.map((item) => (
               <a
@@ -75,7 +75,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="xs:hidden w-full text-center py-3 rounded-xl bg-blue-600 text-white font-bold"
+              className="xs:hidden w-full text-center py-3 rounded-xl bg-black text-white font-bold"
             >
               Hire Me
             </a>
