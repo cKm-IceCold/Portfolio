@@ -4,7 +4,8 @@ import {
 } from "react-icons/fa";
 import {
   SiJavascript, SiTailwindcss, SiHtml5, SiCss3,
-  SiFirebase, SiDjango, SiVite, SiFramer, SiExpress, SiOpenai
+  SiFirebase, SiDjango, SiVite, SiFramer, SiExpress, SiOpenai,
+  SiMysql, SiPostgresql, SiMongodb
 } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { Brain, Sparkles } from "lucide-react";
@@ -32,6 +33,11 @@ const skills = {
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
     { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
     { name: "Framer", icon: <SiFramer className="text-purple-400" /> },
+  ],
+  Databases: [
+    { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
+    { name: "Postgres", icon: <SiPostgresql className="text-blue-400" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
   ],
 };
 

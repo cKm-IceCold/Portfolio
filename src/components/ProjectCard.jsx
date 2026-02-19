@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-bold bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
+            className="text-sm font-bold bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg shadow-black hover:scale-105 transition-transform flex items-center gap-2"
           >
             View Live <FiExternalLink />
           </a>

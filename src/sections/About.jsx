@@ -60,7 +60,7 @@ const About = () => {
             </p>
 
             <p>
-              I’m building real-world projects with React, Tailwind, Firebase, and Django that tackle real problems, and I’m expanding my stack with AI to deliver intelligent, AI-driven solutions.
+              I’m building real-world projects with React, Tailwind, Firebase, Express and Django that tackle real problems, and I’m expanding my stack with AI to deliver intelligent, AI-driven solutions.
             </p>
           </div>
 

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Contact = () => {
   const formRef = useRef();
@@ -69,6 +69,27 @@ const Contact = () => {
                     <div className="text-lg font-bold text-black group-hover:text-blue-600 transition-colors">+234 915 4100 656</div>
                   </div>
                 </a>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <a
+                    href="https://github.com/cKm-IceCold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-blue-500/30 transition-all group"
+                  >
+                    <FaGithub className="text-3xl text-black mb-2 group-hover:scale-110 transition-transform" />
+                    <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">GitHub</span>
+                  </a>
+                  <a
+                    href="https://x.com/dsignVillian"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-blue-500/30 transition-all group"
+                  >
+                    <FaTwitter className="text-3xl text-blue-500 mb-2 group-hover:scale-110 transition-transform" />
+                    <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">X / Twitter</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +30,19 @@ const Navbar = () => {
       <div className="flex items-center gap-2 md:gap-4">
         <a
           href="#contact"
-          className="hidden xs:block px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:scale-105 transition-transform"
+          className="hidden xs:block px-4 py-2 rounded-xl bg-black text-white text-xs font-bold hover:scale-105 transition-transform"
         >
           Hire Me
         </a>
+
+        <div className="hidden sm:flex items-center gap-3 text-slate-900 border-l border-slate-200 ml-2 pl-4">
+          <a href="https://github.com/cKm-IceCold" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+            <FaGithub />
+          </a>
+          <a href="https://x.com/dsignVillian" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
+            <FaTwitter />
+          </a>
+        </div>
 
         {/* Mobile Toggle */}
         <button

@@ -1,7 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
+import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 import profileImg from "../assets/profile.jpg";
+import resume from "../assets/resume.pdf";
 
 const roles = ["Frontend Developer", "Backend Developer", "Fullstack Developer"];
 
@@ -54,7 +57,7 @@ const Hero = () => {
               </AnimatePresence>
             </div>
             <br />
-            developer
+            Developer
           </motion.h1>
 
           <motion.p
@@ -72,7 +75,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
           >
             <a
               href="#projects"
@@ -82,10 +85,25 @@ const Hero = () => {
             </a>
 
             <a
-              href="#contact"
-              className="w-full sm:w-auto px-8 py-4 rounded-full glass font-bold hover:bg-black/5 transition-all border border-slate-200 text-black text-center"
+              href={resume}
+              download
+              className="w-full sm:w-auto px-8 py-4 rounded-full glass font-bold hover:bg-black/5 transition-all border border-slate-200 text-black text-center flex items-center justify-center gap-2"
             >
-              Get in Touch
+              <FiDownload /> Download CV
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="flex items-center justify-center lg:justify-start gap-6 text-2xl text-slate-800"
+          >
+            <a href="https://github.com/cKm-IceCold" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+              <FaGithub />
+            </a>
+            <a href="https://x.com/dsignVillian" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
+              <FaTwitter />
             </a>
           </motion.div>
         </div>
