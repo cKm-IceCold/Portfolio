@@ -112,7 +112,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="hidden lg:flex justify-center items-center"
+          className="flex justify-center items-center order-first lg:order-last mb-12 lg:mb-0"
         >
           <div className="relative w-80 h-80">
             {/* Animated decorative elements */}

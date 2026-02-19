@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { User, Layout, Settings, Sparkles, Brain } from "lucide-react";
+import { User, Layout, Settings, Sparkles, Brain, Atom, Laptop } from "lucide-react";
+import { FaReact, FaGithub } from "react-icons/fa";
+import { SiJavascript, SiMongodb, SiDjango, SiPython, SiFramer } from "react-icons/si";
 import profileImg from "../assets/profile.jpg";
 
 const About = () => {
@@ -20,15 +22,58 @@ const About = () => {
           <div className="aspect-square rounded-[3rem] glass flex items-center justify-center p-2 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-transparent" />
             <motion.div
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-full h-full overflow-hidden rounded-[2.5rem]"
+              className="relative z-10 w-full h-full flex items-center justify-center p-8 lg:p-12"
             >
-              <img
-                src={profileImg}
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Central Atom */}
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    rotate: 360
+                  }}
+                  transition={{
+                    scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                    rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+                  }}
+                  className="relative z-20 w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-blue-600/10 flex items-center justify-center border border-blue-500/20 shadow-[0_0_50px_rgba(37,99,235,0.1)]"
+                >
+                  <Atom className="w-16 h-16 lg:w-24 lg:h-24 text-blue-600" />
+                </motion.div>
+
+                {/* Orbiting Tech Stack */}
+                {[
+                  { icon: <SiJavascript className="text-yellow-400" />, degree: 0 },
+                  { icon: <FaReact className="text-blue-400" />, degree: 72 },
+                  { icon: <SiMongodb className="text-green-500" />, degree: 144 },
+                  { icon: <SiDjango className="text-green-800" />, degree: 216 },
+                  { icon: <Laptop className="text-slate-900" />, degree: 288 },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      rotate: [item.degree, item.degree + 360]
+                    }}
+                    transition={{
+                      duration: 15 + i,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="absolute w-full h-full"
+                  >
+                    <motion.div
+                      animate={{ rotate: [0, -360] }}
+                      transition={{ duration: 15 + i, repeat: Infinity, ease: "linear" }}
+                      className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-white glass rounded-2xl flex items-center justify-center shadow-xl border border-slate-200"
+                    >
+                      <span className="text-2xl lg:text-3xl">{item.icon}</span>
+                    </motion.div>
+                  </motion.div>
+                ))}
+
+                {/* Background Rings */}
+                <div className="absolute inset-0 border border-slate-200/50 rounded-full scale-75 opacity-50" />
+                <div className="absolute inset-0 border border-slate-200/50 rounded-full scale-110 opacity-30" />
+              </div>
             </motion.div>
 
             {/* Floating metrics */}
