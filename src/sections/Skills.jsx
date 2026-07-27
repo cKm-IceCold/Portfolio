@@ -6,10 +6,11 @@ import {
 import {
   SiJavascript, SiTailwindcss, SiHtml5, SiCss3,
   SiFirebase, SiDjango, SiVite, SiFramer, SiExpress, SiOpenai,
-  SiMysql, SiPostgresql, SiMongodb, SiPython
+  SiMysql, SiPostgresql, SiMongodb, SiPython, SiDocker,
+  SiNodedotjs, SiLangchain, SiVercel, SiSqlite
 } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
-import { Brain, Sparkles, Atom, Laptop, ChevronLeft, ChevronRight } from "lucide-react";
+import { Brain, Sparkles, Atom, Laptop, ChevronLeft, ChevronRight, Workflow } from "lucide-react";
 
 const skills = {
   Frontend: [
@@ -19,19 +20,24 @@ const skills = {
     { name: "HTML/CSS", icon: <div className="flex gap-1"><SiHtml5 className="text-orange-500" /><SiCss3 className="text-blue-500" /></div> },
   ],
   Backend: [
+    { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
+    { name: "Python", icon: <SiPython className="text-blue-500" /> },
+    { name: "Django", icon: <SiDjango className="text-green-800" /> },
     { name: "Express", icon: <SiExpress className="text-slate-800" /> },
     { name: "Firebase", icon: <SiFirebase className="text-orange-400" /> },
-    { name: "Django", icon: <SiDjango className="text-green-800" /> },
     { name: "APIs", icon: <AiOutlineApi className="text-slate-800" /> },
   ],
   AI: [
     { name: "Gemini", icon: <Sparkles className="text-blue-500" /> },
+    { name: "LangGraph", icon: <Workflow className="text-emerald-500" /> },
     { name: "OpenAI", icon: <SiOpenai className="text-emerald-500" /> },
     { name: "Agents", icon: <Brain className="text-purple-500" /> },
   ],
   Tools: [
+    { name: "Docker", icon: <SiDocker className="text-blue-500" /> },
     { name: "Git", icon: <div className="flex gap-1"><FaGitAlt className="text-orange-600" /><FaGithub /></div> },
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
+    { name: "Vercel", icon: <SiVercel className="text-black" /> },
     { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
     { name: "Framer", icon: <SiFramer className="text-purple-400" /> },
   ],
@@ -39,6 +45,7 @@ const skills = {
     { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
     { name: "Postgres", icon: <SiPostgresql className="text-blue-400" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+    { name: "SQLite", icon: <SiSqlite className="text-blue-500" /> },
   ],
 };
 

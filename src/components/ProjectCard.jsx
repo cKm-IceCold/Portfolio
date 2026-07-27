@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
       viewport={{ once: true }}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.5 }}
-      className="relative group p-6 rounded-3xl glass h-full flex flex-col"
+      className="relative group p-6 rounded-2xl bg-white/95 border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 min-w-[300px] md:min-w-[360px] max-w-[360px] flex-shrink-0 snap-center flex flex-col"
     >
       <GlowingEffect
         spread={40}
